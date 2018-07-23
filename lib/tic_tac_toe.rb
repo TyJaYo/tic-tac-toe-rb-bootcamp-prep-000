@@ -35,7 +35,11 @@ end
 
 def full?(board) board.each_index.all?{|p| position_taken?(board,p)} end
   
+<<<<<<< HEAD
 def draw?(board) !won?(board) && full?(board) end
+=======
+def draw?(board) won?(board) == false && full?(board) == true end
+>>>>>>> 002640f4f6b654f457255c37cfeac79194cac1aa
   
 def over?(board) won?(board) || draw?(board) end
   
@@ -57,6 +61,7 @@ def turn(board)
 end
 
 def play(board)
+<<<<<<< HEAD
   until over?(board) do
     turn(board)
   end
@@ -65,5 +70,14 @@ def play(board)
     puts "Congratulations #{winner(board)}!"
   elsif draw?(board)
     puts "Cat's Game!"
+=======
+  until over?(board) == true do
+    turn(board)
+    if won?(board)
+      puts "#{winner(board)} wins! Congratulations!"
+    elsif draw?(board)
+      puts "Cat's game!"
+    end
+>>>>>>> 002640f4f6b654f457255c37cfeac79194cac1aa
   end
 end
